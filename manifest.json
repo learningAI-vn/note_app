@@ -1,0 +1,17 @@
+{
+  "name": "CraftNotes — Quản lý Ghi chú",
+  "short_name": "CraftNotes",
+  "description": "Ứng dụng quản lý ghi chú hỗ trợ chế độ ngoại tuyến (Offline PWA & IndexedDB Sync)",
+  "start_url": "index.php",
+  "display": "standalone",
+  "background_color": "#f6f6f8",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "assets/img/default-avatar.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

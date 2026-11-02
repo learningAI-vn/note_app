@@ -1,0 +1,339 @@
+/* ==========================================================================
+   CraftNotes Design System (Inspired by Craft on Mobbin 140efdd7-78ee-4722)
+   Responsive layouts for Smartphone (<576px), Tablet (768px-992px), Desktop (>=1200px)
+   ========================================================================== */
+
+:root {
+    --craft-bg: #f6f6f8;
+    --craft-surface: #ffffff;
+    --craft-border: #e8e8ed;
+    --craft-text: #111827;
+    --craft-muted: #6b7280;
+    --craft-primary: #2563eb;
+    --craft-radius-lg: 20px;
+    --craft-radius-md: 14px;
+    --craft-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    --craft-card-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    --note-font-size: 0.95rem;
+}
+
+[data-bs-theme="dark"] {
+    --craft-bg: #0f1117;
+    --craft-surface: #181b23;
+    --craft-border: #2a2f3d;
+    --craft-text: #f3f4f6;
+    --craft-muted: #9ca3af;
+    --craft-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    --craft-card-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.font-size-small { --note-font-size: 0.85rem; }
+body.font-size-medium { --note-font-size: 0.96rem; }
+body.font-size-large { --note-font-size: 1.12rem; }
+
+body.craft-app-bg,
+body.craft-auth-bg {
+    background-color: var(--craft-bg);
+    color: var(--craft-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+}
+
+/* Auth Card */
+.craft-auth-card {
+    width: 100%;
+    max-width: 430px;
+    background: var(--craft-surface);
+    border: 1px solid var(--craft-border);
+    border-radius: var(--craft-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--craft-shadow);
+}
+
+/* Craft Pastel Icon Tiles & Pills */
+.craft-icon-tile {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.craft-tint-blue   { background: #eef4ff; color: #2563eb; }
+.craft-tint-purple { background: #f5eeff; color: #9333ea; }
+.craft-tint-green  { background: #ecfdf5; color: #0d9488; }
+.craft-tint-amber  { background: #fffbeb; color: #d97706; }
+.craft-tint-rose   { background: #fff1f2; color: #e11d48; }
+
+.craft-action-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.52rem 1rem;
+    border-radius: 13px;
+    border: 1px solid var(--craft-border);
+    background: var(--craft-surface);
+    color: var(--craft-text);
+    font-weight: 600;
+    font-size: 0.88rem;
+    min-height: 44px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.craft-action-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--craft-card-shadow);
+}
+
+.craft-pill-blue   { background: #eef4ff; color: #1d4ed8; border-color: #dbeafe; }
+.craft-pill-purple { background: #f5eeff; color: #7e22ce; border-color: #f3e8ff; }
+.craft-pill-mint   { background: #ecfdf5; color: #0f766e; border-color: #d1fae5; }
+
+/* Banners */
+.craft-unverified-banner {
+    background: #fffbeb;
+    color: #92400e;
+    border-bottom: 1px solid #fde68a;
+}
+
+.craft-offline-banner {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+/* Search Input */
+.craft-search-wrapper {
+    position: relative;
+    max-width: 500px;
+}
+
+.craft-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--craft-muted);
+}
+
+.craft-search-input {
+    padding-left: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--craft-border);
+    background: var(--craft-surface);
+    min-height: 44px;
+}
+
+/* Underline Tabs (Craft Home Style) */
+.craft-tabs-nav {
+    overflow-x: auto;
+}
+
+.craft-tab-link {
+    background: none;
+    border: none;
+    border-bottom: 2.5px solid transparent;
+    padding: 0.6rem 0.25rem;
+    color: var(--craft-muted);
+    font-weight: 600;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.craft-tab-link.active,
+.craft-tab-link:hover {
+    color: var(--craft-text);
+    border-bottom-color: var(--craft-text);
+}
+
+.craft-tab-count {
+    font-size: 0.75rem;
+    background: rgba(107, 114, 128, 0.14);
+    padding: 2px 7px;
+    border-radius: 99px;
+}
+
+/* Segmented Control (Grid vs List) */
+.craft-segmented-control {
+    display: inline-flex;
+    background: rgba(107, 114, 128, 0.12);
+    padding: 3px;
+    border-radius: 12px;
+}
+
+.craft-seg-btn {
+    border: none;
+    background: transparent;
+    color: var(--craft-muted);
+    padding: 0.35rem 0.75rem;
+    border-radius: 9px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    min-height: 38px;
+}
+
+.craft-seg-btn.active {
+    background: var(--craft-surface);
+    color: var(--craft-text);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Notes Grid View (Default) & List View */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Craft Note Card */
+.craft-note-card {
+    background: var(--craft-surface);
+    border: 1px solid var(--craft-border);
+    border-radius: 18px;
+    padding: 1.15rem;
+    box-shadow: var(--craft-card-shadow);
+    cursor: pointer;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+[data-bs-theme="dark"] .craft-note-card {
+    background-color: var(--craft-surface) !important;
+}
+
+.craft-note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--craft-shadow);
+}
+
+.craft-note-title {
+    font-weight: 700;
+    font-size: 1.02rem;
+    margin-bottom: 0.4rem;
+    word-break: break-word;
+}
+
+.craft-note-excerpt {
+    font-size: var(--note-font-size);
+    color: var(--craft-muted);
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+/* Status Indicators (Pin, Lock, Share) */
+.craft-status-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.craft-status-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+}
+
+/* Modal Sheet (Craft Bottom/Floating Card Style) */
+.craft-modal-sheet {
+    border-radius: 22px;
+    border: 1px solid var(--craft-border);
+    box-shadow: var(--craft-shadow);
+}
+
+.craft-editor-title {
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-left: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.craft-editor-content {
+    border: none;
+    font-size: var(--note-font-size);
+    padding-left: 0;
+    resize: vertical;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.craft-color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--craft-border);
+    cursor: pointer;
+}
+
+.craft-color-swatch.active {
+    border-color: var(--craft-primary);
+    transform: scale(1.12);
+}
+
+.craft-avatar-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.craft-sidebar-card,
+.craft-empty-state {
+    background: var(--craft-surface);
+    border: 1px solid var(--craft-border);
+    border-radius: 18px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Criterion #30: Smartphone, Tablet, Desktop)
+   ========================================================================== */
+
+/* Desktop (>= 1200px) */
+@media (min-width: 1200px) {
+    .notes-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Tablet (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Smartphone (< 576px) */
+@media (max-width: 767.98px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    .craft-search-wrapper {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+    }
+    .craft-action-pill {
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+}
